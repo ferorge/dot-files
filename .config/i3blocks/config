@@ -1,0 +1,56 @@
+# i3blocks configuration file
+#
+# The i3blocks man page describes the usage of the binary,
+# and its website describes the configuration:
+#
+#     https://vivien.github.io/i3blocks
+
+
+# Global properties
+
+# # openSUSE colors                                                                   
+# ## Primary                                                                   
+# set $green   "#73ba25"
+# set $d_blue  "#173f4f"
+# set $cyan    "#35b9ab"
+# ## Secondary                                                              
+# set $d_cyan  "#00a489"
+# set $d_green "#6da741"
+# set $blue    "#21a4df"
+# ## Others
+# set $white   "#ffffff"
+# set $l_gray  "#f8f9fa"
+# set $gray    "#868e96"
+# set $d_gray  "#343a40"
+# set $red     "#FF0000"
+# set $yellow  "#ffc107"
+
+separator=true
+separator_block_width=15
+color=#35b9ab
+background=#173f4f
+
+[Menu]
+full_text=Menú
+command=rofi -show drun
+# interval=once
+
+[time]
+command=date '+%Y-%m-%d %H:%M:%S'
+interval=1
+
+# Block with a fixed width
+# [aligned]
+# full_text=Here.
+# min_width=100
+# align=center
+
+# Fancy text with multiple colors and shapes
+# [funky]
+# full_text=<span foreground="red" size="x-large">Roses</span> and <i><span color="#EE37B8">violets</span></i>!
+# markup=pango
+
+[caps-lock]
+command=xset -q | grep Caps | awk '{ print $2, $3, $4 }'
+interval=once
+signal=10
