@@ -50,7 +50,17 @@ interval=1
 # full_text=<span foreground="red" size="x-large">Roses</span> and <i><span color="#EE37B8">violets</span></i>!
 # markup=pango
 
+[num-lock]
+command=if test -z "$(xset -q | grep Num | cut -d '0' -f 4 | grep off)" ; then echo Num ;fi
+interval=once
+signal=10
+
 [caps-lock]
-command=xset -q | grep Caps | awk '{ print $2, $3, $4 }'
+command=if test -z "$(xset -q | grep Caps | cut -d '0' -f 3 | grep off)" ; then echo Caps; fi
+interval=once
+signal=10
+
+[scrl-lock]
+command=if test -z "$(xset -q | grep Scroll | cut -d '0' -f 5 | grep off)" ; then echo Scrl; fi
 interval=once
 signal=10
