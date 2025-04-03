@@ -198,10 +198,10 @@ bar {
 # Modificado por ~ferorge #
 ###########################
 
-title_align left # left|center|right
-default_border pixel 3 # normal|none|pixel
-default_floating_border pixel 3 # normal|none|pixel
-focus_follows_mouse yes # yes|no
+title_align left
+default_border pixel 9
+default_floating_border pixel 9
+focus_follows_mouse yes 
 
 # Set wallpaper
 exec --no-startup-id feh --bg-scale /usr/share/wallpapers/openSUSEdefault/contents/images/default-dark.png
