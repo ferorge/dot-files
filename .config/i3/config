@@ -188,20 +188,44 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
 #        status_command i3status -c /etc/i3status.conf
-        padding 6px
-	tray_output primary
-	workspace_buttons yes
 	status_command i3blocks
+	mode dock
+	hidden_state show
+	modifier Mod4
+	position top
+        padding 2 px
+	workspace_buttons yes
+	workspace_min_width 40
+	strip_workspace_numbers no
+	strip_workspace_name yes
+	binding_mode_indicator yes
+	separator_symbol "|"
+	tray_padding 2 px
+	tray_output primary
+	colors {
+	background #000000
+	statusline #ffffff
+        separator #666666
+
+        focused_workspace  #4c7899 #285577 #ffffff
+        active_workspace   #333333 #5f676a #ffffff
+        inactive_workspace #333333 #222222 #888888
+        urgent_workspace   #2f343a #900000 #ffffff
+        binding_mode       #2f343a #900000 #ffffff
+    }
 }
 
 ###########################
 # Modificado por ~ferorge #
 ###########################
 
+#title_window_icon toggle
 title_align left
-default_border pixel 9
-default_floating_border pixel 9
+default_border pixel 4
+default_floating_border pixel 4
 focus_follows_mouse yes 
+gaps inner 4 px
+gaps outer 4 px
 
 # Set wallpaper
 exec --no-startup-id feh --bg-scale /usr/share/wallpapers/openSUSEdefault/contents/images/default-dark.png
@@ -266,3 +290,7 @@ bindsym $mod+button3 floating toggle
 # The side buttons move the window around
 bindsym button9 move left
 bindsym button8 move right
+
+bindsym --release Num_Lock exec pkill -SIGRTMIN+10 i3blocks
+bindsym --release Caps_Lock exec pkill -SIGRTMIN+10 i3blocks
+bindsym --release Scrl_Lock exec pkill -SIGRTMIN+10 i3blocks
