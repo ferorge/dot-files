@@ -1,0 +1,24 @@
+# ~/.alias ejecutado por /usr/bin/bash mediante .bashrc
+
+########################
+# Editado por ~ferorge #
+########################
+
+alias sl='sl | lolcat'
+alias la='lsd -1ah --icon never'
+alias ll='lsd -1h --icon never'
+
+alias lynx='lynx-color'
+
+alias ddg='lynx https://duckduckgo.com'
+alias goo='lynx https://google.com'
+alias irc='irssi -c irc.tilde.chat -p 6697 -n ferorge -h texto-plano'
+alias pycharm='cd /opt/pycharm-community-2024.1.3/bin/ && ./pycharm.sh && cd'
+
+alias tp='ssh -i ~/.ssh/ferorge_texto-plano ferorge@texto-plano.xyz'
+alias sobnix='ssh -p 30022 ferorge@sobnix.dynv6.net'
+alias green='ssh -i ~/.ssh/ferorge_tilde_green ferorge@tilde.green'
+alias team='ssh -i ~/.ssh/ferorge_tilde_team ferorge@tilde.team'
+alias thunix='ssh -i ~/.ssh/ferorge_thunix_net ferorge@thunix.net'
+alias club='ssh -i ~/.ssh/ferorge_tilde_club ferorge@tilde.club'
+alias telehack='echo -e "$YELLOW pass 13 $DEFAULT" && ssh -p 2222 ferorge@telehack.com'

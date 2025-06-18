@@ -1,0 +1,13 @@
+# CONFIGURATION FILE FOR SETUPCON
+# Consult the console-setup(5) manual page.
+
+########################
+# Editado por ~ferorge #
+########################
+
+ACTIVE_CONSOLES="/dev/tty[1-6]"
+CHARMAP="UTF-8"
+CODESET="Lat15"
+FONTFACE="Terminus"
+FONTSIZE="8x16"
+########################
