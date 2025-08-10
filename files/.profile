@@ -6,7 +6,7 @@
 
 ## Configura guix
 GUIX_PROFILE="$HOME/.guix-profile"
-. "$GUIX_PROFILE/etc/profile"
+test -s $GUIX_PROFILE/etc/profile && . "$GUIX_PROFILE/etc/profile" || true
 
 ## Carga los alias
 test -s ~/.alias && . ~/.alias || true
@@ -35,5 +35,5 @@ export TERMINAL="/usr/bin/xterm"
 export PAGER="/usr/bin/less"
 
 ## Inicia X mediante .xinitrc
-startx
+# startx
 ########################
