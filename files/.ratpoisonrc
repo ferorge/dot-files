@@ -46,5 +46,5 @@ definekey top s-Up exec ratvolume PCM 3%+
 definekey top s-Down exec ratvolume PCM 3%-
 
 ## Ejecuta la terminal
-exec x-terminal-emulator
+exec xterm
 ########################
