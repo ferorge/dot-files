@@ -1,10 +1,12 @@
-# ~/.profile: ejecutado por el intérpretes de comandos de inicio de sesión.
+# ~/.profile: ejecutado por el intérpretes de comandos de inicio de sesión, si y solo si no existen:
+## ~/.bash_profile.
+## ~/.bash_login.
 
 ########################
 # Editado por ~ferorge #
 ########################
 
-## Configura guix
+## Configura perfil de guix
 GUIX_PROFILE="$HOME/.guix-profile"
 test -s $GUIX_PROFILE/etc/profile && . "$GUIX_PROFILE/etc/profile" || true
 
