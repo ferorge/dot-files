@@ -28,3 +28,15 @@ if [ "$color_prompt" = yes ]; then
 else
     PS1='\$ '
 fi
+
+## Ejecuta screen
+if [ $(screen -ls | grep local | wc -l) -eq 0 ]
+then
+    screen -dmS local
+fi
+
+## Abre la sesión de screen solo si está en X11.
+if [ -n "$(env | grep pts)" ]
+then
+    screen -x local
+fi
