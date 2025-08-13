@@ -24,7 +24,11 @@ export LC_CTYPE="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
 
 ## Zona horaria
-export TZ="UTC-3"
+if [[ $(uname) == "Linux" ]]; then
+    export TZ='America/Argentina/Buenos_Aires'
+else
+    export TZ="UTC-3"
+fi
 
 ## Servidor nntp
 export NNTPSERVER="news.tildeverse.org"
