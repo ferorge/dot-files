@@ -13,8 +13,7 @@ test -s $GUIX_PROFILE/etc/profile && . "$GUIX_PROFILE/etc/profile" || true
 ## Carga los alias
 test -s ~/.alias && . ~/.alias || true
 
-## Configura la fuente y su tamaño
-
+## Configura la fuente y tamaño para tty
 if [[ $GPG_TTY =~ "tty" ]]; then
     setfont /usr/share/kbd/consolefonts/Lat2-Terminus20x10.psf.gz
 fi
@@ -35,6 +34,11 @@ export TERMINAL="/usr/bin/xterm"
 
 ## Paginador predeterminado
 export PAGER="/usr/bin/less"
+
+## Carga .bashrc si la shell es bash
+if [[ $0 == '-bash' ]]; then
+    . ~/.bashrc
+fi
 
 ## Inicia X mediante .xinitrc
 # startx
