@@ -1,1 +1,13 @@
+# Cambia la tecla de escape de "a" a "\"
 escape ^\\\
+
+# Establece la cantidad de lineas para volver
+defscrollback 9999
+
+vbell on
+vbell_msg 'Bell!'
+
+
+# hardstatus alwayslastline "%= %3n %t%? [%h]%? %="
+# caption always "%= %-w%L>%{= BW}%n*%t%{-}%52<%+w %L="
+hardstatus alwayslastline "%{= bR}[%{= bY}%H%{= bR}]%{=%{= bR}]"
