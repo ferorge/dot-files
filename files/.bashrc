@@ -35,8 +35,7 @@ then
     screen -dmS local
 fi
 
-## Abre la sesión de screen solo si está en X11.
-if [ -n "$(env | grep pts)" ]
-then
+## Abre la sesión de screen solo si no es tty.
+if [[ $GPG_TTY =~ "pts" ]]; then
     screen -x local
 fi
