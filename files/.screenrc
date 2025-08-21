@@ -7,7 +7,86 @@ defscrollback 9999
 vbell on
 vbell_msg 'Bell!'
 
+## Configurar colores
+### %{bf} b=background f=foreground | uppercase=bright
+# k black
+# r red
+# g green
+# y yellow
+# b blue
+# m magenta
+# c cyan
+# w white
+# d default color (gray)
+# . leave color unchanged
 
-# hardstatus alwayslastline "%= %3n %t%? [%h]%? %="
-# caption always "%= %-w%L>%{= BW}%n*%t%{-}%52<%+w %L="
-hardstatus alwayslastline "%{= bR}[%{= bY}%H%{= bR}]%{=%{= bR}]"
+## String Escapes
+# %c clock 24hs
+# %C clock 12hs
+# %s seconds
+# %a either am or pm
+# %A either AM or PM
+#####################
+# %d day
+# %D weekday name
+# %m month
+# %M month name
+# %y year 2 digits
+# %Y year 4 digits
+#####################
+# %f flags of the windows
+# %F window focus
+# %h hardstatus of the window 
+# %H hostname
+# %l system load
+# %n window number
+# %O count of screen windows
+# %S session name
+# %t window title
+# %u all other users on this window 
+# %w windows list
+
+shelltitle "$ | Viva Perón"
+caption always "%?%F%{dk}%{Wk}%? %{R.}%n %{W.}| %{C.}%t"
+hardstatus alwayslastline "%{=kw} %{G} %H %{-} | %= %-Lw%{+b R} %n%f %t%{-}%+Lw %= | %h%u%{+b Y}%l%{-} | %{C}%d-%M%{-} | %{B}%C:%s %a"
+
+## Desglose
+### %{=kw}	Color predeterminado fondo negro y letra blanca.
+### %{G}	Cambia color de letra a verde brillante (mayúscula).
+### %H		Nombre del huésped donde se ejecutó GNU screen.
+### %{-}	Deshace el cambio de color, en este caso vuelve al predeterminado.
+### |		Separador.
+### %=		Alineación a la derecha.
+### %-Lw	(w) Lista de ventanas | (L) muestra sus banderas | (-) anteriores a la actual. 
+### %{+b R}	Cambia fuente a negrita y color rojo brillante.
+### %n	 	Número de la ventana actual.
+### %f		Banderas de la ventana actual.
+### %t		Título de la ventana actual.
+### %{-}        Deshace el cambio de color, en este caso vuelve al predeterminado.
+### %+Lw        (w) Lista de ventanas | (L) muestra sus banderas | (-) posteriores a la actual.
+### %=          Alineación a la derecha.
+### |		Separador.
+### %h		Estado de la ventana.
+### %u		Lista los otros usuarios en esta ventana.
+### %{+b Y}	Cambia fuente a negrita y color amarillo.
+### %l	 	Estado de la carga del sistema.
+### %{-}        Deshace el cambio de color, en este caso vuelve al predeterminado.
+### |           Separador.
+### %{C}	Cambia color de letra a cian brillante (mayúscula).
+### %d		Día actual.
+### -		Separador.
+### %M		Nombre del mes actual.
+### %{-}        Deshace el cambio de color, en este caso vuelve al predeterminado.
+### |           Separador.
+### %{B}	Cambia color de letra a azul brillante (mayúscula).
+### %C		Hora y minutos en formato de 12 hs.
+### :		Separador.
+### %s		Segundos.
+### %a		Indicador de am / pm en minúsculas.
+
+
+## LizDenys
+### hardstatus alwayslastline '%{= kw}[ %{y}%H%{-} ][ %= %-Lw%{+b M}%n%f* %t%{-}%+LW %= ][ %{r}%l%{-} ][ %{c}%c%{-} ]'
+
+## FreeBSD standard
+### hardstatus alwayslastline '%{gk}[%{G}%H%{g}][%= %{wk}%?%-Lw%?%{=b kR}(%{W}%n*%f %t%?(%u)%?%{=b kR})%{= kw}%?%+Lw%?%?%= %{g}]%{=b C}[%m/%d/%y %C %A]%{W}'
