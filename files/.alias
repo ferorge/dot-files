@@ -8,7 +8,9 @@ alias sl='sl | lolcat'
 alias la='lsd -1ah --icon never'
 alias ll='lsd -1h --icon never'
 
-alias lynx='lynx-color'
+if [ -e /usr/bin/lynx-color ]; then
+    alias lynx='lynx-color'
+fi
 
 alias ddg='lynx https://duckduckgo.com'
 alias goo='lynx https://google.com'
