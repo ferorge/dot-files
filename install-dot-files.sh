@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 
 DIR=~/dot-files/files/
 timestamp=$(date +%F_%H.%M.%S)
