@@ -1,0 +1,24 @@
+set jid=ferorge@texto-plano.xyz
+set password_eval="cat ~/.mcabber/pass"
+set server=texto-plano.xyz
+set port=5222
+set pgp=0
+alias jtxt="room join general@texto-plano.xyz"
+set otr=0
+#set ssl_ciphers=ECDHE_RSA_AES_256_GCM_SHA384
+#set tracelog_file=~/.mcabber/mcabber.log
+#set ssl=0
+#set tls=1
+#set verify_ssl=1
+
+# set vi_mode=0
+# set roster_display_filter = fdna_
+
+# set logging=0
+# set load_logs=1
+# set logging_dir=~/.mcabber/log/
+# set logging_ignore_status=1
+
+
+# set tracelog_level=0
+# set tracelog_file=~/.mcabber/mcabber.log
