@@ -158,6 +158,7 @@ channels = (
   { name = "#lobby"; chatnet = "EsperNet"; autojoin = "No"; },
   { name = "#libera"; chatnet = "liberachat"; autojoin = "No"; },
   { name = "#irssi"; chatnet = "liberachat"; autojoin = "No"; },
+  { name = "#guix"; chatnet = "liberachat"; autojoin = "yes"; },
   { name = "#gamesurge"; chatnet = "GameSurge"; autojoin = "No"; },
   { name = "#irssi"; chatnet = "IRCNet"; autojoin = "No"; },
   { name = "#ircsource"; chatnet = "IRCSource"; autojoin = "No"; },
