@@ -4,7 +4,7 @@
 # Editado por ~ferorge #
 ########################
 ## Establece fondo de pantalla
-exec xwallpaper --maximize wallpaper.jpg
+exec xwallpaper --maximize ~/wallpaper.jpg
 
 ## Establece los escritorios virtuales
 exec /usr/bin/rpws init 12 -k
