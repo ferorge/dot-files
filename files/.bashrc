@@ -1,5 +1,4 @@
 # ~/.bashrc ejecutado por /usr/bin/bash
-echo .bashrc
 
 ## Carga los alias
 test -s ~/.alias && . ~/.alias || true
