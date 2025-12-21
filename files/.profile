@@ -1,6 +1,7 @@
 # ~/.profile: ejecutado por el intérpretes de comandos de inicio de sesión, si y solo si no existen:
 ## ~/.bash_profile.
 ## ~/.bash_login.
+echo .profile
 
 ########################
 # Editado por ~ferorge #
@@ -28,7 +29,7 @@ test -s ~/.alias && . ~/.alias || true
 ## Configura la fuente y tamaño para tty
 #if [[ $GPG_TTY =~ "tty" ]]; then
 if ! $(env | grep pts); then
-    setfont /usr/share/kbd/consolefonts/Lat2-Terminus20x10.psf.gz
+    setfont /usr/share/consolefonts/Lat2-Terminus20x10.psf.gz
 fi
 
 ## Lenguaje del sistema
