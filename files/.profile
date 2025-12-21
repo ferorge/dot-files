@@ -6,6 +6,18 @@
 # Editado por ~ferorge #
 ########################
 
+## Colores
+export RESET="\e[0m"
+export BLACK="\e[30m"
+export RED="\e[31m"
+export GREEN="\e[32m"
+export YELLOW="\e[33m"
+export BLUE="\e[34m"
+export MAGENTA="\e[35m"
+export CYAN="\e[36m"
+export GRAY="\e[37m"
+export DEFAULT="\e[39m"
+
 ## Configura perfil de guix
 GUIX_PROFILE="$HOME/.guix-profile"
 test -s $GUIX_PROFILE/etc/profile && . "$GUIX_PROFILE/etc/profile" || true
@@ -14,7 +26,8 @@ test -s $GUIX_PROFILE/etc/profile && . "$GUIX_PROFILE/etc/profile" || true
 test -s ~/.alias && . ~/.alias || true
 
 ## Configura la fuente y tamaño para tty
-if [[ $GPG_TTY =~ "tty" ]]; then
+#if [[ $GPG_TTY =~ "tty" ]]; then
+if ! $(env | grep pts); then
     setfont /usr/share/kbd/consolefonts/Lat2-Terminus20x10.psf.gz
 fi
 
@@ -34,13 +47,13 @@ fi
 export NNTPSERVER="news.tildeverse.org"
 
 ## Editor predeterminado
-export EDITOR="/usr/bin/emacs"
+export EDITOR=$(whereis emacs | cut -d ' ' -f 2)
 
 ## Emulador de terminal predeterminado
-export TERMINAL="/usr/bin/xterm"
+export TERMINAL=$(whereis xterm | cut -d ' ' -f 2)
 
 ## Paginador predeterminado
-export PAGER="/usr/bin/less"
+export PAGER=$(whereis less | cut -d ' ' -f 2)
 
 ## Carga .bashrc si la shell es bash
 if [[ $0 == '-bash' ]]; then
