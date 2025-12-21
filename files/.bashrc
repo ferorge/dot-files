@@ -1,4 +1,5 @@
 # ~/.bashrc ejecutado por /usr/bin/bash
+echo .bashrc
 
 ## Establece el prompt según la distribución.
 if [ $(id -u) = 0 ]; then
