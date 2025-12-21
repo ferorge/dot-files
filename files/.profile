@@ -24,7 +24,7 @@ GUIX_PROFILE="$HOME/.guix-profile"
 test -s $GUIX_PROFILE/etc/profile && . "$GUIX_PROFILE/etc/profile" || true
 
 ## Configura la fuente y tamaño para tty
-if ! $(env | grep pts); then
+if ! env | grep pts > /dev/null; then
     setfont /usr/share/consolefonts/Lat2-Terminus20x10.psf.gz
 fi
 
