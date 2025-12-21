@@ -23,11 +23,7 @@ export DEFAULT="\e[39m"
 GUIX_PROFILE="$HOME/.guix-profile"
 test -s $GUIX_PROFILE/etc/profile && . "$GUIX_PROFILE/etc/profile" || true
 
-## Carga los alias
-test -s ~/.alias && . ~/.alias || true
-
 ## Configura la fuente y tamaño para tty
-#if [[ $GPG_TTY =~ "tty" ]]; then
 if ! $(env | grep pts); then
     setfont /usr/share/consolefonts/Lat2-Terminus20x10.psf.gz
 fi

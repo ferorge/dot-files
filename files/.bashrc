@@ -1,6 +1,9 @@
 # ~/.bashrc ejecutado por /usr/bin/bash
 echo .bashrc
 
+## Carga los alias
+test -s ~/.alias && . ~/.alias || true
+
 ## Establece el prompt según la distribución.
 if [ $(id -u) = 0 ]; then
     PS1='\[\033[01;31m\]\$\[\033[00m\] '
@@ -40,13 +43,13 @@ fi
 if [[ "$TERM" =~ "screen" ]]; then
     PROMPT_COMMAND='echo -ne "\033k"${cmd%% *}"\033\\";echo -ne "\033k"$USER\@$HOSTNAME\:$PWD"\033\\"'
 fi
-
+\
 if [ $(screen -ls | grep local | wc -l) -eq 0 ]; then
     screen -dmS local
 fi
 
 ## Abre la sesión de screen solo si no es tty.
 ## El condicional es para que permite iniciar X.
-if [[ $GPG_TTY =~ "pts" ]]; then
+if $(env | grep pts); then
     screen -x local
 fi
