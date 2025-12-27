@@ -8,5 +8,5 @@ xrdb ~/.Xdefaults
 xrdb ~/.Xresources
 
 # Ejecuta el gestor de ventanas
-/usr/bin/ratpoison
+`whereis ratpoison | cut -d ' ' -f 2`
 ########################
