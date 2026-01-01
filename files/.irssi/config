@@ -159,6 +159,10 @@ channels = (
   { name = "#libera"; chatnet = "liberachat"; autojoin = "No"; },
   { name = "#irssi"; chatnet = "liberachat"; autojoin = "No"; },
   { name = "#guix"; chatnet = "liberachat"; autojoin = "yes"; },
+  { name = "#trisquel"; chatnet = "liberachat"; autojoin = "yes"; },
+  { name = "#parabola"; chatnet = "liberachat"; autojoin = "yes"; },
+  { name = "#dragora"; chatnet = "liberachat"; autojoin = "yes"; },
+  { name = "#ututo"; chatnet = "liberachat"; autojoin = "yes"; },
   { name = "#gamesurge"; chatnet = "GameSurge"; autojoin = "No"; },
   { name = "#irssi"; chatnet = "IRCNet"; autojoin = "No"; },
   { name = "#ircsource"; chatnet = "IRCSource"; autojoin = "No"; },
@@ -342,3 +346,4 @@ settings = {
   };
   "fe-text" = { actlist_sort = "refnum"; };
 };
+ignores = ( { level = "JOINS PARTS QUITS"; } );
