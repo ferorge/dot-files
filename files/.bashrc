@@ -49,6 +49,6 @@ fi
 
 ## Abre la sesión de screen solo si no es tty.
 ## El condicional es para que permite iniciar X.
-if env | grep pts > /dev/null; then
+if tty | grep pts > /dev/null; then
     screen -x local
 fi
