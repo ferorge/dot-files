@@ -19,15 +19,28 @@ XTerm*saveLines:       999
 XTerm*eightBitInput: false
 XTerm*metaSendsEscape: true
    
+!Use the X display displayname, instead of  the  default  display.
+!ratmenu*display:  displayname
+
 ! Look in /etc/X11/rgb.txt for supported color names
-ratmenu*fgcolor:  yellow
-ratmenu*bgcolor:  blue
+ratmenu*fgcolor:  orange
+ratmenu*bgcolor:  black
+
 ! Look in /etc/X11/fonts/*/*.alias for possible fonts */
-ratmenu*font:     -dosemu-vga-medium-r-normal--20-200-75-75-c-100-ibm-cp866
+!ratmenu*font:     -dosemu-vga-medium-r-normal--20-200-75-75-c-100-ibm-cp866
 !ratmenu*font:     vga
+
+! Possible values: (1, 2, 3, ...) Default 1.
+ratmenu*io:    2
+
 ! Possible values: snazzy, dreary
 ratmenu*style:    dreary
+
 ! Possible values: true, false
-ratmenu*persist:  false
+ratmenu*persist:  true
+
 ! Possible values: left, center, right
 ratmenu*align:    right
+
+! Look in /etc/shells
+ratmenu*shell:    $SHELL
