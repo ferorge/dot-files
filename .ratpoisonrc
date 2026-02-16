@@ -3,36 +3,37 @@
 ########################
 # Editado por ~ferorge #
 ########################
-## Establece fondo de pantalla
-exec xwallpaper --maximize ~/wallpaper.jpg
 
-## Establece los escritorios virtuales
-exec /usr/bin/rpws init 12 -k
-
-## Establece el borde
-set border 4
-set barpadding 2 2 2 2
-set padding 2 2 2 2 
-set fgcolor yellow
-set bgcolor red
-set font -xos4-terminus-medium-r-normal-*-*-140-*-*-c-*-iso8859-1
-set winname title
-set wingravity center
-set transgravity center
-set border 3
-set barborder 3
-set padding 0 1 0 0
-set barpadding 1 1
-set inputwidth 800
-set bargravity center
-set font "Liberation Mono:size=10"
+## Establece colores
 set bgcolor black
 set fgcolor orange
-set fwcolor chocolate
 set bwcolor black
+set fwcolor chocolate
+#####################
+## Establece el borde
+set border 4
+set barborder 3
+set bargravity center
+set barpadding 2 2 2 2
+set font -xos4-terminus-medium-r-normal-*-*-140-*-*-c-*-iso8859-1
+#set font "Liberation Mono:size=10"
+set inputwidth 800
+set padding 2 2 2 2 
+set transgravity center
+set wingravity center
+set winname title
 
 ## Bloqueo de sesión
-bind s-L exec xscreensaver-command -lock
+alias lock exec xscreensaver-command -lock
+bind L exec lock
+
+## ratmenu
+alias ratmenu exec ratmenu -label "Apps" "Terminal" "xterm" "Navegador" "abrowser"
+bind period ratmenu
+
+# abrowser
+alias abrowser exec abrowser
+bind F1 abrowser
 
 ## Control de volumen
 definekey top S-XF86AudioRaiseVolume exec ratvolume Master 3%+
@@ -46,5 +47,9 @@ definekey top s-Up exec ratvolume PCM 3%+
 definekey top s-Down exec ratvolume PCM 3%-
 
 ## Ejecuta la terminal
-exec xterm
+#exec xterm
+
+## Establece los escritorios virtuales
+exec `which rpws` init 12 -k
+
 ########################

@@ -1,0 +1,13 @@
+########################                                       
+# Editado por ~ferorge #                                       
+########################
+export FONTFACE="VGA"
+export FONTSIZE="16"
+
+export XKBMODEL="pc105"
+export XKBLAYOUT="us,us,us"
+export XKBVARIANT="intl,alt-intl,altgr-intl"
+export XKBOPTIONS="grp:ctrl_shift_toggle,compose:rwin"
+
+export BACKSPACE="guess"
+########################

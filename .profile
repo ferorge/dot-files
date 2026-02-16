@@ -1,7 +1,6 @@
 # ~/.profile: ejecutado por el intérpretes de comandos de inicio de sesión, si y solo si no existen:
 ## ~/.bash_profile.
 ## ~/.bash_login.
-echo .profile
 
 ########################
 # Editado por ~ferorge #
@@ -24,7 +23,7 @@ GUIX_PROFILE="$HOME/.guix-profile"
 test -s $GUIX_PROFILE/etc/profile && . "$GUIX_PROFILE/etc/profile" || true
 
 ## Configura la fuente y tamaño para tty
-if $(tty) | grep tty > /dev/null; then
+if tty | grep tty > /dev/null; then
     setfont $(locate Uni3-Terminus20x10)
 fi
 
@@ -55,6 +54,11 @@ export PAGER=$(which less)
 ## Carga .bashrc si la shell es bash
 if [[ $0 == '-bash' ]]; then
     . ~/.bashrc
+fi
+
+## Carga la configuración del teclado.
+if [ -f ~/.keyboard ]; then
+    . ~/.keyboard
 fi
 
 ## Inicia X mediante .xinitrc

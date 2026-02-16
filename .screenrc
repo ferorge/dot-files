@@ -48,8 +48,9 @@ vbell_msg 'Bell!'
 
 shelltitle "$ | Viva Perón"
 caption always "%?%F%{dk}%{Wk}%? %{R.}%n %{W.}| %{C.}%t"
-hardstatus alwayslastline "%{=kw} %{G} %H %{-} | %= %-Lw%{+b R} %n%f %t%{-}%+Lw %= | %h%u%{+b Y}%l%{-} | %{C}%d-%M%{-} | %{B}%C:%s %a"
 
+# hardstatus alwayslastline "%{=kw} %{G} %H %{-} | %= %-Lw%{+b R} %n%f %t%{-}%+Lw %= | %h%u%{+b Y}%l%{-} | %{C}%d-%M%{-} | %{B}%C:%s %a"
+hardstatus alwayslastline "%{=kw} %{G} %H %{-} | %= %-Lw%{+b R} %n%f %t%{-}%+Lw %= | %{+b Y}%l%{-} | %{C}%d-%M%{-} | %{B}%C:%s %a"
 ## Desglose
 ### %{=kw}	Color predeterminado fondo negro y letra blanca.
 ### %{G}	Cambia color de letra a verde brillante (mayúscula).
