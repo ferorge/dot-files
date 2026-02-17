@@ -39,6 +39,10 @@ bind F1 abrowser
 alias geeqie exec geeqie
 bind F2 geeqie
 
+## gnumeric
+alias gnumeric exec gnumeric
+bind F3 gnumeric
+
 ## Control de volumen
 definekey top S-XF86AudioRaiseVolume exec ratvolume Master 3%+
 definekey top S-XF86AudioMute exec ratvolume Master 0

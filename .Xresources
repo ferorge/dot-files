@@ -40,7 +40,7 @@ ratmenu*style:    dreary
 ratmenu*persist:  true
 
 ! Possible values: left, center, right
-ratmenu*align:    right
+ratmenu*align:    left
 
 ! Look in /etc/shells
 ratmenu*shell:    $SHELL
