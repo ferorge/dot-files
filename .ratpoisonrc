@@ -31,9 +31,13 @@ bind L lock
 alias ratmenu exec ratmenu -label "Apps" "Terminal" "xterm" "Navegador" "abrowser"
 bind period ratmenu
 
-# abrowser
+## abrowser
 alias abrowser exec abrowser
 bind F1 abrowser
+
+## geeqie
+alias geeqie exec geeqie
+bind F2 geeqie
 
 ## Control de volumen
 definekey top S-XF86AudioRaiseVolume exec ratvolume Master 3%+
