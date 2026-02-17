@@ -44,6 +44,10 @@ bind F2 geeqie
 alias gnumeric exec gnumeric
 bind F3 gnumeric
 
+## abiword
+alias abiword exec abiword
+bind F4 abiword
+
 ## Control de volumen
 definekey top S-XF86AudioRaiseVolume exec ratvolume Master 3%+
 definekey top S-XF86AudioMute exec ratvolume Master 0
