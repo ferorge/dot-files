@@ -28,7 +28,8 @@ alias lock exec xscreensaver-command -lock
 bind L lock
 
 ## ratmenu
-alias ratmenu exec ratmenu -label "Apps" "Terminal" "xterm" "Navegador" "abrowser"
+alias ratmenu exec bash -ic ratmenu
+
 bind period ratmenu
 
 ## abrowser

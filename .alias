@@ -24,3 +24,13 @@ alias team='ssh -i ~/.ssh/ferorge_tilde_team ferorge@tilde.team'
 alias thunix='ssh -i ~/.ssh/ferorge_thunix_net ferorge@thunix.net'
 alias club='ssh -i ~/.ssh/ferorge_tilde_club ferorge@tilde.club'
 alias telehack='echo -e "$YELLOW pass 13 $DEFAULT" && ssh -p 2222 ferorge@telehack.com'
+
+alias ratmenu='ratmenu -label "Apps" \
+"C  xterm" "xterm" \
+"F1 abrowser" "abrowser" \
+"F2 geeqie" "geeqie" \
+"F3 gnumeric" "gnumeric" \
+"F4 abiword" "abiword" \
+"F5 evince" "evince" \
+"PRTSC screenshot" "gnome-screenshot -a" \
+'
