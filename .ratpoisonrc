@@ -25,7 +25,7 @@ set winname title
 
 ## Bloqueo de sesión
 alias lock exec xscreensaver-command -lock
-bind L exec lock
+bind L lock
 
 ## ratmenu
 alias ratmenu exec ratmenu -label "Apps" "Terminal" "xterm" "Navegador" "abrowser"
