@@ -52,6 +52,10 @@ bind F4 abiword
 alias evince exec evince
 bind F5 evince
 
+## gnome-screenshot
+alias gnome-screenshot exec gnome-screenshot -a
+bind Print gnome-screenshot
+
 ## Control de volumen
 definekey top S-XF86AudioRaiseVolume exec ratvolume Master 3%+
 definekey top S-XF86AudioMute exec ratvolume Master 0
