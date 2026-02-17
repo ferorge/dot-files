@@ -48,6 +48,10 @@ bind F3 gnumeric
 alias abiword exec abiword
 bind F4 abiword
 
+## evince
+alias evince exec evince
+bind F5 evince
+
 ## Control de volumen
 definekey top S-XF86AudioRaiseVolume exec ratvolume Master 3%+
 definekey top S-XF86AudioMute exec ratvolume Master 0
