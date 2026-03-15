@@ -31,27 +31,6 @@ xrdb ~/.Xresources
 ## ratmenu
 alias ratmenu='ratmenu -label "Apps" "Terminal" "xterm" "Navegador" "abrowser"'
 
-while true; do
-    # Memoria RAM: Extrae uso actual y total
-    MEM=$(free -m | awk '/Mem:/ {print $3"MB/"$2"MB"}')
-    
-    # Batería: Extrae porcentaje y estado (Cargando/Descargando)
-    BAT_PERC=$(cat /sys/class/power_supply/BAT0/capacity)
-    BAT_STAT=$(cat /sys/class/power_supply/BAT0/status)
-    
-    # Fecha y Hora
-    DATE=$(date +"%d/%m %H:%M")
-    
-    # Carga de CPU
-    LOAD=$(cut -d " " -f1 /proc/loadavg)
-    
-    # Envío a la barra de ratpoison
-    xsetroot -name " [RAM: $MEM] [BAT: $BAT_PERC% $BAT_STAT] [CPU: $LOAD] [$DATE] "
-    
-    sleep 1
-done &
-
-
 ## Ejecuta el gestor de ventanas
 exec `which ratpoison`
 ########################
