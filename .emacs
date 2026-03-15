@@ -53,3 +53,6 @@
 ;; create the autosave dir if necessary, since emacs won't.
 (make-directory "~/.emacs.d/autosaves/" t)
 (make-directory "~/.emacs.d/backups/" t)
+
+
+(setq native-comp-async-report-warnings-errors 'silent)
