@@ -61,6 +61,10 @@ if [ -f ~/.keyboard ]; then
     . ~/.keyboard
 fi
 
+## Cache temporal
+mkdir -p /tmp/ferorge/.cache
+ln -s /tmp/ferorge/.cache ~/
+
 ## Inicia X mediante .xinitrc
 # startx
 ########################
