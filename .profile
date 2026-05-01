@@ -63,7 +63,10 @@ fi
 
 ## Cache temporal
 mkdir -p /tmp/ferorge/.cache
-ln -s /tmp/ferorge/.cache ~/
+if ! [ -L ~/.cache ]; then
+    mv ~/.cache /tmp/ferorge/
+    ln -s /tmp/ferorge/.cache ~/
+fi
 
 ## Inicia X mediante .xinitrc
 # startx
