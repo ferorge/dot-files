@@ -14,13 +14,6 @@ servers = (
     tls_verify = "yes";
   },
   {
-    address = "irc.libera.chat";
-    chatnet = "liberachat";
-    port = "6697";
-    use_tls = "yes";
-    tls_verify = "yes";
-  },
-  {
     address = "irc.gamesurge.net";
     chatnet = "GameSurge";
     port = "6667";
@@ -44,6 +37,7 @@ servers = (
     port = "6697";
     use_tls = "yes";
     tls_verify = "yes";
+    autoconnect = "yes";
   },
   { 
     address = "irc.quakenet.org";
@@ -78,6 +72,15 @@ servers = (
     use_tls = "yes";
     tls_verify = "yes";
     autoconnect = "yes";
+  },
+  {
+    address = "irc.libera.chat";
+    chatnet = "liberachat";
+    port = "6697";
+    use_tls = "yes";
+    tls_verify = "yes";
+    autoconnect = "yes";
+  }
   }
 );
 
@@ -162,13 +165,13 @@ channels = (
   { name = "#trisquel"; chatnet = "liberachat"; autojoin = "yes"; },
   { name = "#parabola"; chatnet = "liberachat"; autojoin = "yes"; },
   { name = "#dragora"; chatnet = "liberachat"; autojoin = "yes"; },
-  { name = "#ututo"; chatnet = "liberachat"; autojoin = "yes"; },
   { name = "#gamesurge"; chatnet = "GameSurge"; autojoin = "No"; },
   { name = "#irssi"; chatnet = "IRCNet"; autojoin = "No"; },
   { name = "#ircsource"; chatnet = "IRCSource"; autojoin = "No"; },
   { name = "#netfuze"; chatnet = "NetFuze"; autojoin = "No"; },
   { name = "#oftc"; chatnet = "OFTC"; autojoin = "No"; },
   { name = "silc"; chatnet = "SILC"; autojoin = "No"; },
+  { name = "#debian-ar"; chatnet = "OFTC"; autojoin = "yes"; },
   { name = "#texto-plano"; chatnet = "tilde.chat"; autojoin = "yes"; },
   { name = "#aussie"; chatnet = "tilde.chat"; autojoin = "yes"; },
   { name = "#cosmic"; chatnet = "tilde.chat"; autojoin = "yes"; },
