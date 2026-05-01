@@ -33,7 +33,7 @@ alias ratmenu exec bash -ic ratmenu
 bind period ratmenu
 
 ## abrowser
-alias abrowser exec abrowser
+alias abrowser exec TZ=Greenwhich && abrowser
 bind F1 abrowser
 
 ## geeqie
@@ -51,6 +51,10 @@ bind F4 abiword
 ## evince
 alias evince exec evince
 bind F5 evince
+
+## abrowser
+alias icecat exec TZ=Greenwhich && icecat
+bind F6 icecat
 
 ## gnome-screenshot
 alias gnome-screenshot exec gnome-screenshot -a
@@ -73,4 +77,6 @@ definekey top s-Down exec ratvolume PCM 3%-
 ## Establece los escritorios virtuales
 exec `which rpws` init 12 -k
 
+## Saludo de bienvenida
+exec `which notify-send` `hello`
 ########################
