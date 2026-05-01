@@ -43,7 +43,26 @@
 ;;;
 )
 ;;;
-(setq column-number-mode t)
+;; ===================================
+;; MELPA Package Support
+;; ===================================
+;; Enables basic packaging support
+(require 'package)
+
+;; Adds the Melpa archive to the list of available repositories
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.org/packages/") t)
+
+;; Initializes the package infrastructure
+(package-initialize)
+
+;; If there are no archived package contents, refresh them
+(when (not package-archive-contents)
+  (package-refresh-contents))
+
+;; ===================================
+;; Basic Customization
+;; ===================================
 
 ;; Put autosave files (ie #foo#) and backup files (ie foo~) in ~/.emacs.d/.
 (custom-set-variables
@@ -55,4 +74,68 @@
 (make-directory "~/.emacs.d/backups/" t)
 
 
+;; Installs packages
+;;
+;; myPackages contains a list of package names
+(defvar myPackages
+  '(better-defaults                 ;; Set up some better Emacs defaults
+;;    monokai-theme                   ;; Theme
+;;    monokai-alt-theme               ;; Theme
+    darkokai-theme               ;; Theme
+    magit                           ;; Git integration
+    )
+  )
+
+;; Scans the list in myPackages
+;; If the package listed is not already installed, install it
+(mapc #'(lambda (package)
+          (unless (package-installed-p package)
+            (package-install package)))
+      myPackages)
+
+(setq column-number-mode t)
+
 (setq native-comp-async-report-warnings-errors 'silent)
+
+(setq inhibit-startup-message t)    ;; Hide the startup message
+(load-theme 'darkokai t)           ;; Load material theme
+;(global-display-line-numbers-mode 1)
+
+;; ==========
+;; Python IDE
+;; ==========
+;;
+;; Installs packages
+;;
+;; pyPackages contains a list of package names
+(defvar pyPackages
+  '(elpy                            ;; Emacs Lisp Python Environment
+    ;;ein                             ;; Emacs iPython Notebook
+    flycheck                        ;; On the fly syntax checking
+    py-autopep8                     ;; Run autopep8 on save
+    ;;blacken                         ;; Black formatting on save
+    )
+  )
+
+;; Scans the list in myPackages
+;; If the package listed is not already installed, install it
+(mapc #'(lambda (package)
+          (unless (package-installed-p package)
+            (package-install package)))
+      pyPackages)
+
+;; Alternatively, to use it only in programming modes:
+;(add-hook 'prog-mode-hook #'display-line-numbers-mode)
+(elpy-enable) 
+
+;; Enable Flycheck
+(when (require 'flycheck nil t)
+  (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))
+  (add-hook 'elpy-mode-hook 'flycheck-mode))
+
+;; Enable autopep8
+(require 'py-autopep8)
+(add-hook 'elpy-mode-hook 'py-autopep8-enable-on-save)
+
+;; User-Defined init.el ends here
+
