@@ -28,9 +28,6 @@ xrdb ~/.Xresources
 ## Distribucion de teclado en /usr/share/X11/xkb/symbols/us
 `which setxkbmap` -model "$XKBMODEL" -layout "$XKBLAYOUT" -variant "$XKBVARIANT" -option "$XKBOPTIONS" &
 
-## ratmenu
-alias ratmenu='ratmenu -label "Apps" "Terminal" "xterm" "Navegador" "abrowser"'
-
 ## Ejecuta el gestor de ventanas
 exec `which ratpoison`
 ########################
