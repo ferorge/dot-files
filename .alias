@@ -4,6 +4,7 @@
 # Editado por ~ferorge #
 ########################
 
+alias bat='batcat'
 alias sl='sl | lolcat'
 alias la='lsd -1ah --icon never'
 alias ll='lsd -1h --icon never'
