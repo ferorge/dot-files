@@ -28,6 +28,9 @@ xrdb ~/.Xresources
 ## Distribucion de teclado en /usr/share/X11/xkb/symbols/us
 `which setxkbmap` -model "$XKBMODEL" -layout "$XKBLAYOUT" -variant "$XKBVARIANT" -option "$XKBOPTIONS" &
 
+## Tiempo para que el notificador se inicie
+sleep 1
+
 ## Ejecuta el gestor de ventanas
 exec `which ratpoison`
 ########################
