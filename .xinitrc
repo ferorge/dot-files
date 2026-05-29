@@ -17,7 +17,8 @@ xrdb ~/.Xresources
 `which xcompmgr` -sfFn &
 
 ## Ejecuta el gestor de notificaciones
-/usr/lib/notification-daemon/notification-daemon &
+# /usr/lib/notification-daemon/notification-daemon &
+`locate *notification-daemon | tail -n 1` &
 
 ## Ejecuta el protector de pantalla
 `which xscreensaver` &
