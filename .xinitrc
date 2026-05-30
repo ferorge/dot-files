@@ -18,7 +18,8 @@ xrdb ~/.Xresources
 
 ## Ejecuta el gestor de notificaciones
 # /usr/lib/notification-daemon/notification-daemon &
-`locate *notification-daemon | tail -n 1` &
+#`locate *notification-daemon | tail -n 1` &
+`find /usr/lib* -name notification-daemon -type f 2> /dev/null` &
 
 ## Ejecuta el protector de pantalla
 `which xscreensaver` &
@@ -30,7 +31,7 @@ xrdb ~/.Xresources
 `which setxkbmap` -model "$XKBMODEL" -layout "$XKBLAYOUT" -variant "$XKBVARIANT" -option "$XKBOPTIONS" &
 
 ## Tiempo para que el notificador se inicie
-sleep 1
+sleep 2
 
 ## Ejecuta el gestor de ventanas
 exec `which ratpoison`
