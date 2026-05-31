@@ -75,7 +75,7 @@ definekey top s-Down exec ratvolume PCM 3%-
 #exec xterm
 
 ## Establece los escritorios virtuales
-exec `which rpws` init 12 -k
+exec ~/bin/rpws init 6 -k -a
 
 ## Saludo de bienvenida
 exec `which notify-send` `hello`
