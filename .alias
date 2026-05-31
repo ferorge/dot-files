@@ -31,6 +31,7 @@ alias telehack='echo -e "$YELLOW pass 13 $DEFAULT" && ssh -p 2222 ferorge@teleha
 alias abrowser='TZ=Greenwhich && abrowser'
 alias icecat='TZ=Greenwhich && icecat'
 
+alias rpws='~/bin/rpws'
 alias ratmenu='ratmenu -label "Apps" \
 "C  xterm" "xterm &" \
 "F1 abrowser" "abrowser &" \
