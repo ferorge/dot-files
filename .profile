@@ -62,10 +62,10 @@ if [ -f ~/.keyboard ]; then
 fi
 
 ## Cache temporal
-mkdir -p /tmp/ferorge/.cache
+mkdir -p /tmp/$USER/.cache
 if ! [ -L ~/.cache ]; then
-    mv ~/.cache /tmp/ferorge/
-    ln -s /tmp/ferorge/.cache ~/
+    mv ~/.cache /tmp/$USER/
+    ln -s /tmp/$USER/.cache ~/
 fi
 
 ## Inicia X mediante .xinitrc
