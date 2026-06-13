@@ -13,13 +13,17 @@ xrdb ~/.Xresources
 #    eval $(dbus-launch --sh-syntax --exit-with-session)
 #fi
 
-## Ejecuta el compositor para evitar tearing
-`which xcompmgr` -sfFn &
-
 ## Ejecuta el gestor de notificaciones
 # /usr/lib/notification-daemon/notification-daemon &
 #`locate *notification-daemon | tail -n 1` &
-`find /usr/lib* -name notification-daemon -type f 2> /dev/null` &
+if [ $(grep ^"NAME" /etc/os-release) != "Guix" ]; then
+    `find /usr/lib* -name notification-daemon -type f 2> /dev/null` &
+else
+    `find /gnu -name notification-daemon -type f 2> /dev/null` &
+fi
+
+## Ejecuta el compositor para evitar tearing
+`which xcompmgr` -sfFn &
 
 ## Ejecuta el protector de pantalla
 `which xscreensaver` &
@@ -31,7 +35,7 @@ xrdb ~/.Xresources
 `which setxkbmap` -model "$XKBMODEL" -layout "$XKBLAYOUT" -variant "$XKBVARIANT" -option "$XKBOPTIONS" &
 
 ## Tiempo para que el notificador se inicie
-sleep 2
+sleep 3
 
 ## Ejecuta el gestor de ventanas
 exec `which ratpoison`
