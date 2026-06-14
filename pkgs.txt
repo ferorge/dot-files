@@ -1,0 +1,7 @@
+# Paquetes
+
+## Consola
+emacs-nox screen git htop iotop lynx ncdu mc irssi mcabber lynis tree lsd bat hello stow console-setup plocate
+
+## X
+xinit xorg-x11-server xorg-x11-driver-input xauth xrdb xmodmap xcompmgr xwallpaper xterm setxkbmap notification-daemon libnotify* dbus-1 xscreensaver ratpoison
