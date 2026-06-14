@@ -16,7 +16,7 @@ xrdb ~/.Xresources
 ## Ejecuta el gestor de notificaciones
 # /usr/lib/notification-daemon/notification-daemon &
 #`locate *notification-daemon | tail -n 1` &
-if [ $(grep ^"NAME" /etc/os-release) != "Guix" ]; then
+if [ "$(grep '^NAME=' /etc/os-release | cut -d= -f2 | tr -d '"')" != "Guix" ]; then
     `find /usr/lib* -name notification-daemon -type f 2> /dev/null` &
 else
     `find /gnu -name notification-daemon -type f 2> /dev/null` &
