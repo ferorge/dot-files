@@ -43,13 +43,13 @@ fi
 export NNTPSERVER="news.tildeverse.org"
 
 ## Editor predeterminado
-export EDITOR=$(which emacs)
+export EDITOR=$(command -v emacs)
 
 ## Emulador de terminal predeterminado
-export TERMINAL=$(which xterm)
+export TERMINAL=$(command -v xterm)
 
 ## Paginador predeterminado
-export PAGER=$(which less)
+export PAGER=$(command -v less)
 
 ## Carga .bashrc si la shell es bash
 if [[ $0 == '-bash' ]]; then
