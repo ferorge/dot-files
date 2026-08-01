@@ -4,7 +4,10 @@
 # Editado por ~ferorge #
 ########################
 
-alias bat='batcat'
+if command -v batcat >/dev/null 2>&1; then
+    alias bat='batcat'
+fi
+
 alias sl='sl | lolcat'
 alias ls='ls -1'
 alias la='lsd -1ah --icon never'
