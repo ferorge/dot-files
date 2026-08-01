@@ -49,7 +49,11 @@ export EDITOR=$(command -v emacs)
 export TERMINAL=$(command -v xterm)
 
 ## Paginador predeterminado
-export PAGER=$(command -v less)
+if command -v batcat >/dev/null 2>&1; then
+    export PAGER="$(command -v batcat) -p"
+else
+    export PAGER="$(command -v bat) -p"
+fi
 
 ## Carga .bashrc si la shell es bash
 if [[ $0 == '-bash' ]]; then
