@@ -68,6 +68,12 @@ if ! [ -L ~/.cache ]; then
     ln -s /tmp/$USER/.cache ~/
 fi
 
+## Configuración de correo
+export MAIL=/var/mail/$USER
+export MAILPATH=/var/mail/$USER
+export MAILCHECK=60
+
+
 ## Inicia X mediante .xinitrc
 # startx
 ########################
