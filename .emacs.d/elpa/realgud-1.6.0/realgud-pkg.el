@@ -1,0 +1,2 @@
+;; Generated package description from realgud.el  -*- no-byte-compile: t -*-
+(define-package "realgud" "1.6.0" "A modular front-end for interacting with external debuggers" '((load-relative "1.3.2") (loc-changes "1.2") (test-simple "1.3.0") (emacs "27")) :commit "7a93c29c04a4f0d283d3acb3918c4d6381bbfc20" :authors '(("Rocky Bernstein" . "rocky@gnu.org")) :maintainer '("Rocky Bernstein" . "rocky@gnu.org") :keywords '("debugger" "gdb" "python" "perl" "go" "bash" "zsh" "bashdb" "zshdb" "remake" "trepan" "perldb" "pdb") :url "https://github.com/realgud/realgud/")

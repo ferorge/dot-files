@@ -113,7 +113,7 @@
     ;;ein                             ;; Emacs iPython Notebook
     flycheck                        ;; On the fly syntax checking
     py-autopep8                     ;; Run autopep8 on save
-    ;;blacken                         ;; Black formatting on save
+    blacken                         ;; Black formatting on save
     )
   )
 
@@ -130,12 +130,53 @@
 
 ;; Enable Flycheck
 (when (require 'flycheck nil t)
-  (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))
+  ;;  (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))
+  (setq elpy-modules
+	'(elpy-module-company      ; Autocompletado
+	  elpy-module-eldoc        ; Documentación en el minibuffer
+	  elpy-module-highlight-indentation
+	  elpy-module-yasnippet    ; Snippets
+	  elpy-module-flymake      ; Linting en tiempo real
+	  elpy-module-pyvenv       ; Soporte para virtualenv
+	  ))
   (add-hook 'elpy-mode-hook 'flycheck-mode))
 
 ;; Enable autopep8
 (require 'py-autopep8)
 (add-hook 'elpy-mode-hook 'py-autopep8-enable-on-save)
 
-;; User-Defined init.el ends here
+;; company-mode (Autocompletado)
+(use-package company
+  :ensure t
+  :config
+  (global-company-mode)
+  (setq company-idle-delay 0.1)  ; Retraso mínimo para autocompletar
+  )
 
+;; flycheck` (Linting en tiempo real)
+(use-package flycheck
+  :ensure t
+  :init
+  (global-flycheck-mode)
+  :config
+  (setq flycheck-check-syntax-automatically '(save mode-enabled))
+  )
+
+;; Formateo de código con `black` y `isort`
+(use-package blacken
+  :ensure t
+  :hook (python-mode . blacken-mode)
+  )
+
+(use-package py-isort
+  :ensure t
+  :hook (python-mode . py-isort-mode)
+  )
+
+
+;; Testing con `pytest`
+(use-package pytest
+  :ensure t
+  :config
+  (setq pytest-cmd "pytest")
+  )

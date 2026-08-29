@@ -3,6 +3,8 @@
 [user]
 # Please adapt and uncomment the following lines:
 	name = ferorge
-	email = ferorge@texto-plano.xyz
+	email = ferorge@sobnix.ar
 [credential]
 	helper = cache
+[init]
+	defaultBranch = master
